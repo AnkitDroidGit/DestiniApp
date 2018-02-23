@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     // Our strings
     let story1 = "Your car has blown a tire on a winding road in the middle of nowhere with no cell phone reception. You decide to hitchhike. A rusty pickup truck rumbles to a stop next to you. A man with a wide brimmed hat with soulless eyes opens the passenger door for you and asks: \"Need a ride, boy?\"."
     let answer1a = "I\'ll hop in. Thanks for the help!"
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     
     // TODO Step 5: Initialise instance variables here
     
-    
+    var stateIndex : Int = 1
     
     
     override func viewDidLoad() {
@@ -45,21 +45,36 @@ class ViewController: UIViewController {
         
         // TODO Step 3: Set the text for the storyTextView, topButton, bottomButton, and to T1_Story, T1_Ans1, and T1_Ans2
         
+        storyTextView.text = story1
+        topButton.setTitle(answer1a, for: .normal)
+        bottomButton.setTitle(answer1b, for: .normal)
+        
     }
-
+    
     
     // User presses one of the buttons
     @IBAction func buttonPressed(_ sender: UIButton) {
-    
+        
         // TODO Step 4: Write an IF-Statement to update the views
-                
+        
+        if sender.tag == 1 {
+            storyTextView.text = story3
+            topButton.setTitle(answer3a, for: .normal)
+            bottomButton.setTitle(answer3b, for: .normal)
+        } else if sender.tag == 2 {
+            storyTextView.text = story2
+            topButton.setTitle(answer2a, for: .normal)
+            bottomButton.setTitle(answer2b, for: .normal)
+            
+        }
+        
         // TODO Step 6: Modify the IF-Statement to complete the story
         
-    
+        
     }
     
-
-
-
+    
+    
+    
 }
 
