@@ -38,16 +38,15 @@ class ViewController: UIViewController {
     
     var stateIndex : Int = 1
     
+    @IBOutlet weak var restartButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         // TODO Step 3: Set the text for the storyTextView, topButton, bottomButton, and to T1_Story, T1_Ans1, and T1_Ans2
-        
-        storyTextView.text = story1
-        topButton.setTitle(answer1a, for: .normal)
-        bottomButton.setTitle(answer1b, for: .normal)
+        restartButton.isHidden = true
+        restartStory()
         
     }
     
@@ -67,6 +66,7 @@ class ViewController: UIViewController {
                 storyTextView.text = story6
                 topButton.isHidden = true
                 bottomButton.isHidden = true
+                stateIndex = 6
             }
         } else if sender.tag == 2 {
             if stateIndex == 1 {
@@ -78,21 +78,33 @@ class ViewController: UIViewController {
                 storyTextView.text = story5
                 topButton.isHidden = true
                 bottomButton.isHidden = true
+                stateIndex = 5
             } else if stateIndex == 2 {
                 storyTextView.text = story4
                 topButton.isHidden = true
                 bottomButton.isHidden = true
+                stateIndex = 4
 
             }
         }
         
+        if stateIndex == 4 || stateIndex == 5 || stateIndex == 6 {
+            restartButton.isHidden = false
+        }
         // TODO Step 6: Modify the IF-Statement to complete the story
         
+    }
+    @IBAction func restartPressed(_ sender: Any) {
+        stateIndex = 1
+        restartStory()
+       
+    }
+    func restartStory() {
+        storyTextView.text = story1
+        topButton.setTitle(answer1a, for: .normal)
+        bottomButton.setTitle(answer1b, for: .normal)
         
     }
-    
-    
-    
     
 }
 
