@@ -58,14 +58,37 @@ class ViewController: UIViewController {
         // TODO Step 4: Write an IF-Statement to update the views
         
         if sender.tag == 1 {
-            storyTextView.text = story3
-            topButton.setTitle(answer3a, for: .normal)
-            bottomButton.setTitle(answer3b, for: .normal)
+            if stateIndex == 1 {
+                storyTextView.text = story3
+                topButton.setTitle(answer3a, for: .normal)
+                bottomButton.setTitle(answer3b, for: .normal)
+                stateIndex = 3
+            } else if stateIndex == 3 {
+                storyTextView.text = story6
+                topButton.isHidden = true
+                bottomButton.isHidden = true
+            } else if stateIndex == 2 {
+                storyTextView.text = story3
+                topButton.setTitle(answer3a, for: .normal)
+                bottomButton.setTitle(answer3b, for: .normal)
+                stateIndex = 3
+            }
         } else if sender.tag == 2 {
-            storyTextView.text = story2
-            topButton.setTitle(answer2a, for: .normal)
-            bottomButton.setTitle(answer2b, for: .normal)
-            
+            if stateIndex == 1 {
+                storyTextView.text = story2
+                topButton.setTitle(answer2a, for: .normal)
+                bottomButton.setTitle(answer2b, for: .normal)
+                stateIndex = 2
+            } else if stateIndex == 3 {
+                storyTextView.text = story5
+                topButton.isHidden = true
+                bottomButton.isHidden = true
+            } else if stateIndex == 4 {
+                storyTextView.text = story4
+                topButton.isHidden = true
+                bottomButton.isHidden = true
+
+            }
         }
         
         // TODO Step 6: Modify the IF-Statement to complete the story
