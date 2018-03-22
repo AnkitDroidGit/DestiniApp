@@ -1,9 +1,6 @@
 # DestiniApp
 Learn to make iOS Apps with Destini App
 
-Beginner: Download the starter project files as .zip and extract the files to your desktop.
-
-Pro: Git clone to your Xcode projects folder.
 
 ### Contact - Let's connect to learn together
 - [Twitter](https://twitter.com/KumarAnkitRKE)
